@@ -43,8 +43,23 @@ export default function Contact() {
     if (!formData.name || !formData.email || !formData.message || !formData.project) return;
     
     setFormState('loading');
+
+    // Prepare WhatsApp message
+    const phoneNumber = "917975293887";
+    const message = `*New Project Inquiry from Nexlancers Studio*%0A%0A` +
+      `*Name:* ${formData.name}%0A` +
+      `*Email:* ${formData.email}%0A` +
+      `*Project:* ${formData.project}%0A%0A` +
+      `*Message:*%0A${formData.message}`;
+    
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${message}`;
+
     setTimeout(() => {
       setFormState('success');
+      
+      // Open WhatsApp in a new tab
+      window.open(whatsappUrl, '_blank');
+
       setTimeout(() => {
         setFormState('idle');
         setFormData({ name: '', email: '', project: '', message: '' });
@@ -153,7 +168,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative max-w-lg w-full ml-auto overflow-hidden"
+          className="relative max-w-lg w-full ml-auto"
         >
           {/* Subtle Form Backdrop Glow */}
           <div className="absolute -inset-10 bg-gradient-to-b from-blue-500/10 via-purple-500/5 to-transparent blur-3xl rounded-[3rem] opacity-50 z-0 pointer-events-none" />
@@ -239,7 +254,7 @@ export default function Contact() {
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: -10 }}
                                     transition={{ duration: 0.2 }}
-                                    className="absolute top-full left-0 right-0 mt-3 rounded-2xl bg-[#0a0a0a]/90 backdrop-blur-2xl border border-white/10 overflow-hidden shadow-[0_10px_40px_rgba(0,0,0,0.5)] z-50 p-2"
+                                    className="absolute top-full left-0 right-0 mt-3 rounded-2xl bg-[#0a0a0a]/90 backdrop-blur-2xl border border-white/10 shadow-[0_10px_40px_rgba(0,0,0,0.5)] z-50 p-2 max-h-64 overflow-y-auto custom-scrollbar"
                                   >
                                     {step.options?.map(opt => (
                                       <button
