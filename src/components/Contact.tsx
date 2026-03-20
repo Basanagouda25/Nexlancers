@@ -45,7 +45,7 @@ export default function Contact() {
     setFormState('loading');
 
     // Prepare WhatsApp message
-    const phoneNumber = "917975293887";
+    const phoneNumber = "919019752746";
     const message = `*New Project Inquiry from Nexlancers Studio*%0A%0A` +
       `*Name:* ${formData.name}%0A` +
       `*Email:* ${formData.email}%0A` +
