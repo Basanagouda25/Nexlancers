@@ -30,7 +30,7 @@ const revealRight = (delay: number) => ({
 const services = [
   {
     number: "01",
-    title: "Web\nDevelopment",
+    title: "Web Development",
     subtitle: "High-performance modern websites",
     description:
       "We craft blazing-fast, responsive websites using cutting-edge frameworks. From pixel-perfect landing pages to complex web applications that scale.",
@@ -46,7 +46,7 @@ const services = [
   },
   {
     number: "02",
-    title: "Mobile\nApplications",
+    title: "Mobile Applications",
     subtitle: "Scalable Android & iOS apps",
     description:
       "Native and cross-platform mobile apps that deliver seamless, performant user experiences. Built to engage millions.",
@@ -62,7 +62,7 @@ const services = [
   },
   {
     number: "03",
-    title: "Custom\nSoftware",
+    title: "Custom Software",
     subtitle: "Tailored solutions for businesses",
     description:
       "Enterprise-grade software solutions engineered to solve your unique business challenges. Built to scale infinitely and adapt to your growth.",
@@ -264,7 +264,7 @@ function ServicePanel({ service, index }: { service: (typeof services)[0]; index
           {/* Title with hover tracking effect */}
           <motion.h3
             {...revealUp(0.1)}
-            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-black text-white tracking-tight leading-[1.05] mb-5 whitespace-pre-line group-hover:tracking-normal transition-all duration-700 break-words"
+            className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-display font-black text-white tracking-tight leading-[1.05] mb-5 group-hover:tracking-normal transition-all duration-700"
           >
             {service.title}
           </motion.h3>
