@@ -73,7 +73,7 @@ const TiltCard = ({ member, index }: { member: typeof team[0], index: number }) 
     <motion.div
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
+      viewport={{ once: true, margin: "-40px" }}
       transition={{ duration: 0.8, delay: index * 0.1 }}
       style={{
         perspective: 1000,

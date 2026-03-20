@@ -378,7 +378,7 @@ function MobileProjects() {
             key={project.id}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-60px" }}
+            viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.7 }}
           >
             {/* Number */}

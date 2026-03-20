@@ -10,7 +10,7 @@ export default function AboutStory() {
     offset: ['start end', 'end start'],
   });
 
-  const textY = useTransform(scrollYProgress, [0, 1], ['-20%', '20%']);
+  const textY = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
   const bgTextX = useTransform(scrollYProgress, [0, 1], ['-10%', '10%']);
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1, 0.95]);
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0]);
@@ -74,13 +74,13 @@ export default function AboutStory() {
       >
         <div className="space-y-2 md:space-y-4 text-center">
           {paragraphLines.map((line, i) => (
-            <div key={i} className="overflow-hidden">
+            <div key={i} className="">
               <motion.p
-                initial={{ opacity: 0, y: 50, rotateX: -20 }}
+                initial={{ opacity: 0, y: 30, rotateX: -10 }}
                 whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
+                viewport={{ once: true, amount: 0.1 }}
                 transition={{ duration: 1, delay: i * 0.15, ease: [0.16, 1, 0.3, 1] }}
-                className="text-xl md:text-3xl lg:text-4xl font-display font-medium leading-[1.4] md:leading-[1.5] tracking-tight text-zinc-300"
+                className="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-display font-medium leading-[1.4] md:leading-[1.5] tracking-tight text-zinc-300"
               >
                 {line}
               </motion.p>
@@ -92,7 +92,7 @@ export default function AboutStory() {
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 1, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
             className="relative inline-block group"
           >
@@ -102,7 +102,7 @@ export default function AboutStory() {
             <motion.span 
               initial={{ scaleX: 0 }}
               whileInView={{ scaleX: 1 }}
-              viewport={{ once: true, margin: "-100px" }}
+              viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 1.5, delay: 1.2, ease: "easeInOut" }}
               className="absolute bottom-1 left-0 w-full h-2 md:h-4 bg-blue-600/30 -z-10 origin-left blur-sm"
             />
